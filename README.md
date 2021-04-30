@@ -4,7 +4,7 @@
 
 This workbook was compiled to democratize geospatial analysis, aiming to teach the reader through worked out programming problems. The Geospatial Workbook provides the reader with an example geospatial problem (with input files) and corresponding solutions (and discussion). These tutorials assumes that the reader has some knowledge of GIS and basic understanding of the Unix command line. 
 
-## How to contribute
+## How to Contribute
 
 There are multiple ways to contribute to the workbook:
 
