@@ -1,7 +1,7 @@
 ---
 title: "Importing Data From Santeniel 2 Satellite"
 layout: single
-author: Rowan
+author: Rowan Gaffney
 author_profile: true
 header:
   overlay_color: "444444"
@@ -16,10 +16,10 @@ Accessing, downloading, stacking, and working with earth observations (EO) data 
 
 ## Primary Libraries/Packages:
 
-|Name|Description|Link|
+|Name|Description|
 |-|-|-|
-|xarray|Labelled multi-dimensional arrays|http://xarray.pydata.org/en/stable/|
-|hvplot|High-level plotting API built on [HoloViews](https://holoviews.org/)|https://hvplot.holoviz.org/|
+|[xarray](http://xarray.pydata.org/en/stable/)|Labelled multi-dimensional arrays|
+|[hvplot](https://hvplot.holoviz.org/)|High-level plotting API built on [HoloViews](https://holoviews.org/)
 |geopandas|Extends [Pandas](https://pandas.pydata.org/) to allow spatial operations on geometric types|https://geopandas.org/|
 |stackstac|Turns a STAC collection into a lazy xarray.DataArray, backed by dask.|https://stackstac.readthedocs.io/en/latest/|
 |satsearch|Discovering/downloading satellite imagery using a STAC compliant API.|https://github.com/sat-utils/sat-search|
