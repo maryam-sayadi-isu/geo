@@ -20,9 +20,9 @@ Accessing, downloading, stacking, and working with earth observations (EO) data 
 |-|-|-|
 |[xarray](http://xarray.pydata.org/en/stable/)|Labelled multi-dimensional arrays|
 |[hvplot](https://hvplot.holoviz.org/)|High-level plotting API built on [HoloViews](https://holoviews.org/)
-|geopandas|Extends [Pandas](https://pandas.pydata.org/) to allow spatial operations on geometric types|https://geopandas.org/|
-|stackstac|Turns a STAC collection into a lazy xarray.DataArray, backed by dask.|https://stackstac.readthedocs.io/en/latest/|
-|satsearch|Discovering/downloading satellite imagery using a STAC compliant API.|https://github.com/sat-utils/sat-search|
+|[geopandas](https://geopandas.org/)|Extends [Pandas](https://pandas.pydata.org/) to allow spatial operations on geometric types|
+|[stackstac](https://stackstac.readthedocs.io/en/latest/)|Turns a STAC collection into a lazy xarray.DataArray, backed by dask.
+|[satsearch](https://github.com/sat-utils/sat-search)|Discovering/downloading satellite imagery using a STAC compliant API.|
 
 ## Nomenclature
 
