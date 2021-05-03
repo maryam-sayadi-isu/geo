@@ -12,7 +12,7 @@ Materials modified from the [USDA ARS AI Workshop 2020](https://kerriegeil.githu
 
 | Tutorial | Python | R | Jupyter Notebook |
 |:--|:--|:--|:--|
-| 01 - Image Processing Essentials | [view](Tutorial1_Image_Processing_Essentials.md) |[view](R_Image_Processing.Rmd) |[view](../tutorials/Tutorial1_Image_Processing_Essentials.ipynb)|
+| 01 - Image Processing Essentials | [view](Tutorial1_Image_Processing_Essentials.md) |[view](R_Image_Processing.md) |[view](../tutorials/Tutorial1_Image_Processing_Essentials.ipynb)|
 | 02 - Classical Machine Learning | [view](Tutorial2_Classical_Machine_Learning_Boucheron.md)| |[view](../tutorials/Tutorial2_Classical_Machine_Learning_Boucheron.ipynb)|
 | 03 - Deep Learning for Images | [view](Tutorial3_Deep_Learning_for_Images_Boucheron.md) | |[view](../tutorials/Tutorial3_Deep_Learning_for_Images_Boucheron.ipynb)|
 | 04 - Visualizing and Modifying Deep Learning Networks | [view](Tutorial4_Visualizing_and_Modifying_DL_Networks_Boucheron.md) | |[view](../tutorials/Tutorial4_Visualizing_and_Modifying_DL_Networks_Boucheron.ipynb)|
