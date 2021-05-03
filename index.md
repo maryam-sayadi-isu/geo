@@ -7,7 +7,7 @@ header:
 excerpt: 'Democratizing geospatial analysis through practical tutorials'
 feature_row:
 
-  - title: "introduction to Unix"
+  - title: "Introduction to Unix"
     image_path: /assets/images/alexander-sinn-KgLtFCgfC28-unsplash.jpg
     alt: "Programs"
     url: "IntroductionToCommandLine/IntroToCommandLine_landingPage"
