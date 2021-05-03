@@ -1,7 +1,7 @@
 ---
 title: "Importing Data From Santeniel 2 Satellite"
 layout: single
-author: Rowan 
+author: Rowan
 author_profile: true
 header:
   overlay_color: "444444"
@@ -10,7 +10,7 @@ header:
 
 # Importing Images from Sentinel 2 satellite  
 
-##Overview
+## Overview
 
 Accessing, downloading, stacking, and working with earth observations (EO) data can be time-consuming, tedious, and generally in-efficient. Here we show how to leverage a SpatioTemporal Asset Catalog (STAC) to streamline the process of working with EO data.
 
