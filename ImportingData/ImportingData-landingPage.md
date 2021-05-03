@@ -12,4 +12,4 @@ header:
 
 | Tutorial | Python | Jupyter Notebook |
 |:--|:--|:--|
-|Importing data from Santeniel 2 satellite | [view](ImportingImages.md) | [view]()| 
+|Importing data from Santeniel 2 satellite | [view](ImportingImages.md) | [view](Sentinel2_STAC.jpynb)| 
