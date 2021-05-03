@@ -33,7 +33,7 @@ feature_row:
 
     - title: "Importing Images"
       image_path: /assets/images/markus-spiske-qjnAnF0jIGk-unsplash.jpg
-      alt: "Programs3"
+      alt: "Programs"
       url: "ImportingData/ImportingImages"
       btn_label: "Learn More"
 ---
