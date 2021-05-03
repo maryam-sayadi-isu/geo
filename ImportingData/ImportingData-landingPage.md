@@ -13,5 +13,4 @@ header:
 
 ## Index
 
-* <span style="color:lightblue">Introduction to Unix</span>
-  * [Importing data from Santeniel 2 satellite ](ImportingImages.md)
+* [Importing data from Santeniel 2 satellite ](ImportingImages.md)
