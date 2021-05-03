@@ -14,7 +14,7 @@ header:
 
 Accessing, downloading, stacking, and working with earth observations (EO) data can be time-consuming, tedious, and generally in-efficient. Here we show how to leverage a SpatioTemporal Asset Catalog (STAC) to streamline the process of working with EO data.
 
-##Primary Libraries/Packages:
+## Primary Libraries/Packages:
 
 |Name|Description|Link|
 |-|-|-|
@@ -37,7 +37,8 @@ Accessing, downloading, stacking, and working with earth observations (EO) data 
   * *Normalized Difference Vegetation Index (NDVI)*: A spectral index using the Red and Near Infrared spectra to estimate green (photosynthetically active) vegetation.
   * *Cloud Optimized Geotiff (COG)*: A GeoTiff file that has a specialized internal organization that enables cloud computing workflows.
 
-  ## Data Details
+## Data Details
+
   * Repository: https://registry.opendata.aws/
   * Data: Sentinel 2 L2A (https://sentinel.esa.int/web/sentinel/user-guides/sentinel-2-msi/product-types/level-2a)
   * Link: https://registry.opendata.aws/sentinel-2-l2a-cogs/
