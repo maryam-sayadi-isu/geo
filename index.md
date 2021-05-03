@@ -22,14 +22,9 @@ feature_row:
   - title: "Introduction to Image Analysis"
     image_path: /assets/images/joshua-sortino-LqKhnDzSF-8-unsplash.jpg
     alt: "Programs2"
-    url: "Workshops/ImageMLWorkshop"
+    url: "IntroductionToImageAnalysis/ImageMLWorkshop"
     btn_label: "Learn More"
 
-  - title: "Index of Jupyter/R Notebooks"
-    image_path: /assets/images/markus-spiske-qjnAnF0jIGk-unsplash.jpg
-    alt: "Programs3"
-    url: "Workshops/JupyterNtbk"
-    btn_label: "Learn More"
 
   - title: "Importing Images"
     image_path: /assets/images/markus-spiske-qjnAnF0jIGk-unsplash.jpg
