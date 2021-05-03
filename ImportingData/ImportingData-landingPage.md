@@ -8,9 +8,8 @@ header:
 
 
 
-
-
-
 ## Index
 
-* [Importing data from Santeniel 2 satellite ](ImportingImages.md)
+| Tutorial | Python | Jupyter Notebook |
+|:--|:--|:--|
+|Importing data from Santeniel 2 satellite ]| [view](ImportingImages.md) | [view]()| 
