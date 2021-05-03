@@ -27,7 +27,7 @@ feature_row:
 
 
   - title: "Importing Images"
-    image_path: /assets/images/markus-spiske-qjnAnF0jIGk-unsplash.jpg
+    image_path: /assets/images/nasa.png
     alt: "Programs"
     url: "ImportingData/ImportingData-landingPage"
     btn_label: "Learn More"
