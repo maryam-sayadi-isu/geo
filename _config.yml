@@ -21,8 +21,8 @@ title_separator          : "-"
 name                     : ""
 description              : "Tutorial on Informatics for Geospatial Information"
 url                      : "maryam-sayadi-isu.github.io" #"https://geospatial.101workbook.org" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
-baseurl                  : "" # the subpath of your site, e.g. "/blog"
-repository               : "maryam-sayadi-isu/geospatialworkbook" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
+baseurl                  : "geo/" # the subpath of your site, e.g. "/blog"
+repository               : "maryam-sayadi-isu/geo" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 permalink: none
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 # breadcrumbs            : false # true, false (default)
