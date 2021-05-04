@@ -39,10 +39,10 @@ Accessing, downloading, stacking, and working with earth observations (EO) data 
 
 ## Data Details
 
-  * Repository: https://registry.opendata.aws/
-  * Data: Sentinel 2 L2A (https://sentinel.esa.int/web/sentinel/user-guides/sentinel-2-msi/product-types/level-2a)
+  * Repository: [AWS](https://registry.opendata.aws/)
+  * Data: [Sentinel 2 L2A](https://sentinel.esa.int/web/sentinel/user-guides/sentinel-2-msi/product-types/level-2a)
   * Link: https://registry.opendata.aws/sentinel-2-l2a-cogs/
-  * STAC Catalog Viewer: https://stacindex.org/catalogs/earth-search#/Cnz1sryATwWudkxyZekxWx6356v9RmvvCcLLw79uHWJUDvt2
+  * [STAC Catalog Viewer](https://stacindex.org/catalogs/earth-search#/Cnz1sryATwWudkxyZekxWx6356v9RmvvCcLLw79uHWJUDvt2)
 
 ## Analysis Steps
   1. **[Define the ROI](#roi)**
@@ -203,6 +203,13 @@ da
 ```
 ![3-band object](assets/3BandObject.png)
 
+### Step 5: Subset and Mask to the CPER ROI
+
+
+- Using the xarray object from Step 4, clip the xarray object to the ROI (CPER bounding box).
+- Apply a mask using the CPER shapefile (pixels outside the shapefile will be changed to null).
+
+The dataset is reduced to 3.05 GB (from 396 GB) by clipping the data the bounding box of the ROI. Note that we use two functions to "mask" the data that falls within the ROI bounding box, but outside the domain (perimeter) of the CPER. The first function xr_2_affine, takes an xarray object, and calculates the affine transform (see nominclature section). The second function, shp2mask, rasterizes a shapefile (0's=outside and 1's=inside the shapefile) to match the same dimensions of the xarray object.
 
 ```python
 # Get the bounds in epsg:32613 and apply to the xarray object
@@ -272,3 +279,74 @@ da_cper_ndvi
 ```
 
 ![NDVI](assets/NDVI.png)
+
+### Step 7: Explore and Plot
+
+- Bring data to memory (e.g. download from AWS) using `compute()`.
+- Select a single time-step `2019-06-28` and plot the image.
+- Select a single pixel to get a time-series and plot the time series.
+- Calculate the average NDVI (across CPER) per time step and plot the time series.
+
+```Python
+# Bring data to memory (e.g. download from AWS)
+# Depending on your internet speed, this can take 10's of seconds - ~ 5 minutes
+da_cper_ndvi = da_cper_ndvi.compute()
+```
+```Python
+# Query a single date / image
+t = '2019-06-28'
+da_cper_ndvi_plot = da_cper_ndvi.sel(time=t)
+
+# Plot the image as well as the CPER shape file (showing pastures)
+da_cper_ndvi_plot.squeeze().hvplot(x='x',
+                                   y='y',
+                                   tiles='ESRI',
+                                   crs=32613,
+                                   cmap='viridis',
+                                   clim=(.15, .65),
+                                   title='CPER NDVI on '+t,
+                                   frame_width=600) * \
+cper_shp.hvplot(crs=32613,
+                alpha=0,
+                line_alpha=1,
+                hover=False)
+```
+
+![NDVA SIngle date](assets/NDVI-singleDate.png)
+
+```python
+# Quey a single pixel, for all the time steps
+da_cper_ndvi_ts = da_cper_ndvi.where(da_cper_ndvi>.1).isel(x=450,y=450).rename('NDVI')
+
+# Plot the raw time series as well as a weekly max time series
+pt_str = '(x='+str(int(da_cper_ndvi_ts.x.values))+',y='+str(int(da_cper_ndvi_ts.y.values))+')'
+da_cper_ndvi_ts.hvplot(x='time',
+                       kind='scatter',
+                       title='NDVI '+pt_str,
+                       width=500,
+                       grid=True) + \
+da_cper_ndvi_ts.groupby('time.weekofyear').max().hvplot(kind='scatter',
+                                                        title='Weekly Max NDVI '+pt_str,
+                                                        width=500,
+                                                        grid=True)
+```
+![plot](assets/NDVI-plot.png)
+
+```Python
+
+
+# Get the mean for the entire Domain at each time step
+da_cper_ndvi_tsall = da_cper_ndvi.where(da_cper_ndvi>.1).mean(dim=['x','y'])
+
+# Plot the NDVI time series
+da_cper_ndvi_tsall.hvplot(x='time',
+                          kind='scatter',
+                          title='Avg. NDVI across CPER',
+                          grid=True,colorbar=True)
+
+```
+![average-plot](assets/average-NDVI-plot.png)
+
+### Concluding Remarks:
+
+A traditional workflow would involve downloading individual tiles that intersect the ROI, which for 2019, would be 396 GB, and then subsetting the data once it is in local storage. Assuming a download speed of 100 Mbps, this approach would take ~8.8 hours to simply download all the tiles. Here we have shown how to leverage a SpatioTemporal Asset Catalog to analyze EO data. The data is stored in Cloud Optimized Geotiffs (COGs), which allows efficient data access to particular chunks of the file (via http range requests). Using python packages that "lazily loading" the data, we are able to efficiently build out a workflow to subset, mask, and apply calculations (NDVI) before beginning the process of downloading the data. Finally, we "compute" the results into memory (Step 7), and are able to work with a much more managable dataset (1.0 GB).
