@@ -330,11 +330,10 @@ da_cper_ndvi_ts.groupby('time.weekofyear').max().hvplot(kind='scatter',
                                                         width=500,
                                                         grid=True)
 ```
+
 ![plot](assets/NDVI-plot.png)
 
 ```Python
-
-
 # Get the mean for the entire Domain at each time step
 da_cper_ndvi_tsall = da_cper_ndvi.where(da_cper_ndvi>.1).mean(dim=['x','y'])
 
