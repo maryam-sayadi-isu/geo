@@ -15,11 +15,11 @@ header:
 ### October 2020
 
 > Copyright (C) 2020  Laura E. Boucheron
-> 
+>
 > This information is free; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 3 of the License, or (at your option) any later version.
-> 
+>
 > This work is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
-> 
+>
 > You should have received a copy of the GNU General Public License along with this work in a file `COPYING.TXT`; if not, If not, see <https://www.gnu.org/licenses/>.
 
 ## Overview
@@ -43,7 +43,7 @@ There are subsections with the heading "**<span style='color:Green'> Your turn: 
 
 There are two main types of cells in this notebook: code and markdown (text).  You can add a new cell with the plus sign in the menu bar above and you can change the type of cell with the dropdown menu in the menu bar above.  As you complete this tutorial, you may wish to add additional code cells to try out your own code and markdown cells to add your own comments or notes.
 
-A jupyter notebook with code and markdown (text) sections is provided for your convenience. 
+A jupyter notebook with code and markdown (text) sections is provided for your convenience.
 
  * [Tutorial2\_Classical\_Machine\_Learning\_Boucheron.ipynb](https://geospatial.101workbook.org/tutorials/Tutorial2_Classical_Machine_Learning_Boucheron.ipynb)
 
@@ -74,7 +74,7 @@ You will need the dataset of images and the annoations
 * 101_ObjectCategories.tar.gz (126 MB)
 * Annotations.tar (13 MB)
 
-Which will allow us to focus our feature extraction on only the objects in the images. 
+Which will allow us to focus our feature extraction on only the objects in the images.
 
 Extract the image dataset and the annotations in your working directory.  The images will extract to a `101_ObjectCategories/` directory, under which there are 102 directories named according to the object contained in the image (e.g., `accordion/` or `pizza/`), under which are files with file format `image_XXXX.jpg`, where `XXXX` is a four digit number. After extracing the files you should be left with a folder structure similar to:
 
@@ -106,7 +106,7 @@ The annotations will extract to an `Annotations/` directory, underneath which th
     * Move (rename) directory `Faces_3/` to `Faces_easy/`
     * Move (rename) directory `Motorbikes_16/` to `Motorbikes/`
 
-From commandline, you can cleanup by running: 
+From commandline, you can cleanup by running:
 
 ```bash
 mv Annotations/*.mat archive/.
@@ -181,7 +181,7 @@ for k, category in enumerate(categories):
 
 
 
-![png](images/Tutorial2_Classical_Machine_Learning_Boucheron_7_0.png)
+![images](images/Tutorial2_Classical_Machine_Learning_Boucheron_7_0.png)
 
 
 
