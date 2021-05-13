@@ -16,4 +16,6 @@ gem "jemoji"
 gem "jekyll-include-cache"
 gem "jekyll-algolia"
 gem "rouge"
+gem 'rake'
+gem 'html-proofer'
 end
